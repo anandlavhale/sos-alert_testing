@@ -79,7 +79,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const employeeId = urlParams.get('id');
 
 if (employeeId) {
-  fetch(http://localhost:3000/employee/${employeeId})
+  fetch(`http://localhost:3000/employee/${employeeId}`)
       .then(response => response.json())
       .then(employee => {
           if (employee) {
