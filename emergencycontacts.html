@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #000000, #ff4b2b);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 300px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-card:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-card h2 {
+            margin: 10px 0;
+        }
+
+        .call-button {
+            background: #ff4b2b;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .call-button:hover {
+            background: #ff2200;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Emergency Contacts</h1>
+
+    <div class="container">
+        <div class="contact-card">
+            <h2>🚑 Ambulance</h2>
+            <p>Emergency Medical Assistance</p>
+            <a href="tel:108" class="call-button">Call 108</a>
+        </div>
+
+        <div class="contact-card">
+            <h2>🚒 Fire Department</h2>
+            <p>Fire and Rescue Services</p>
+            <a href="tel:101" class="call-button">Call 101</a>
+        </div>
+
+        <div class="contact-card">
+            <h2>🚔 Police</h2>
+            <p>Law Enforcement</p>
+            <a href="tel:100" class="call-button">Call 100</a>
+        </div>
+    </div>
+
+</body>
+</html>

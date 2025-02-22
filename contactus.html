@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #000000, #ff4b2b);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        .info {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .info a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .info a:hover {
+            color: #ffcc00;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Contact Us</h1>
+
+    <div class="container">
+        <p class="info">📍 <strong>Address:</strong>PICT, Dhankawadi, Pune</p>
+        <p class="info">📞 <strong>Phone:</strong> <a href="tel:+911234567890">+91 12345 67890</a></p>
+        <p class="info">📞 <strong>Support:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+        <p class="info">✉️ <strong>Email:</strong> <a href="mailto:support@credenz.com">support@credenz.com</a></p>
+        <p class="info">✉️ <strong>HR:</strong> <a href="mailto:hr@credenz.com">hr@credenz.com</a></p>
+    </div>
+
+</body>
+</html>
