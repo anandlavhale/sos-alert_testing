@@ -24,6 +24,201 @@
       }
       .wrapper {
         display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        margin-top: 20px;
+      }
+      .container2 {
+        width: 400px;
+        height: 500px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        transition: transform 0.3s ease-in-out;
+      }
+      .container2:hover {
+        transform: scale(1.05);
+      }
+      .profile-pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        animation: pulse 1.5s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .profile-details {
+        text-align: left;
+      }
+      .company {
+        font-size: 32px;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(45deg, #ffcc00, #ff3300);
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        text-transform: uppercase;
+        font-family: 'Times New Roman', Times, serif;
+        letter-spacing: 2px;
+        animation: fadeIn 1s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .dark-mode-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 22px;
+        background: none;
+        border: none;
+        color: white;
+      }
+      .nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px; /* Adjust width as needed */
+  height: 100vh;
+  background: rgba(48, 9, 9, 0.6); /* Semi-transparent black */
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-bar button {
+  width: 100%;
+  height: 50px; /* Ensures consistent button height */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  text-align: center;
+
+  /* Flexbox for centering text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-bar button:hover {
+  background: rgba(171, 40, 40, 0.2);
+}
+
+
+    </style>
+  </head>
+  <body>
+    <h1 class="company">CREDENZ</h1>
+    <button class="dark-mode-toggle" id="toggleDarkMode">🌙</button>
+    <nav class="nav-bar">
+        <button>
+            Chatbot
+        </button>
+        <button onclick="location.href='emergencycontacts.html'">
+            Emergency Contacts
+        </button>
+        <button onclick="location.href='contactus.html'">
+            Contact Us
+        </button>
+    </nav>
+    <div class="wrapper">
+      <div class="container2">
+        <img src="./images/pushkar.jpg" alt="Profile Picture" class="profile-pic" />
+        <div class="profile-details">
+          <p><strong>Employee ID:</strong> 123456</p>
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Mobile Number:</strong> +91 9876543210</p>
+          <p><strong>Blood Group:</strong> O+</p>
+          <p><strong>Health Conditions:</strong> Asthma</p>
+          <p><strong>Medical History:</strong> No major surgeries</p>
+        </div>
+      </div>
+      <div class="container2">
+        <h1>🚨 Emergency SOS Alert</h1>
+        <p>⚠️ Press the button below to send an emergency alert.</p>
+        <form id="sosForm">
+          <label for="message">Custom Message:</label>
+          <select id="message">
+            <option value="🚨 Help Needed Urgently!">🚨 Help Needed Urgently!</option>
+            <option value="🚨 Medical Emergency!">🚨 Medical Emergency!</option>
+            <option value="🚨 Security Threat!">🚨 Security Threat!</option>
+            <option value="🚨 Fire Emergency!">🚨 Fire Emergency!</option>
+          </select>
+          <label for="recipients">Recipients (comma-separated):</label>
+          <input type="text" id="recipients" value="+917058341534" required />
+          <button type="submit" class="sos-button">🚨 Send SOS</button>
+        </form>
+        <div class="spinner" id="loadingSpinner"></div>
+        <p id="resultSection"></p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+
+<!--DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚨 Emergency SOS Alert</title>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="https://unpkg.com/milligram/dist/milligram.min.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        background: linear-gradient(135deg, #000000, #ff4b2b);
+        font-family: "Arial", sans-serif;
+        transition: background 0.3s ease-in-out;
+      }
+      .dark-mode {
+        background: linear-gradient(135deg, #121212, #232323);
+        color: white;
+      }
+      .wrapper {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
